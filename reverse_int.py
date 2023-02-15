@@ -14,3 +14,4 @@ class Solution:
             if int(s[::-1]) > 2**31-1: return 0
             return int(s[::-1])
 
+
