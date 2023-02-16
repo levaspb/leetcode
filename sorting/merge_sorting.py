@@ -1,0 +1,29 @@
+'''
+You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+
+Constraints:
+nums1.length == m + n
+nums2.length == n
+0 <= m, n <= 200
+1 <= m + n <= 200
+-109 <= nums1[i], nums2[j] <= 109
+'''
+
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        if n == 0:
+            return
+        num1_pointer = 0
+        while num1_pointer < m:
+            if nums1[num1_pointer] < nums2[0]:
+                num1_pointer += 1
+                continue
+            nums1[num1_pointer], nums2[0] = nums2[0], nums1[num1_pointer]
+            num1_pointer += 1
+            nums2.sort()
+        for i in range(n):
+            nums1[num1_pointer+i] = nums2[i]
