@@ -11,6 +11,10 @@ nums2.length == n
 0 <= m, n <= 200
 1 <= m + n <= 200
 -109 <= nums1[i], nums2[j] <= 109
+
+Results:
+    Runtime: 30 ms
+    Memory Usage: 13.9 MB
 '''
 
 class Solution:
