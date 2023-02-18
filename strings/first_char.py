@@ -28,10 +28,7 @@ from collections import Counter
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         char_dict = Counter(s)
-        c = 0
-        for i in s:
+        for c, i in enumerate(s):
             if char_dict[i] == 1:
                 return c
-            else:
-                c += 1
         return -1
